@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Helpful metadata for SEO and social sharing -->
+    <meta name="description" content="Alexandros Vavatzanidis (Zandros Vava) - South African/Greek composer and classical guitarist. Commissions, performances, and guitar lessons.">
+    <meta name="keywords" content="Alexandros Vavatzanidis, Zandros Vava, composer, classical guitar, South African composer, music commissions, guitar lessons Cape Town">
+    <meta name="author" content="Alexandros Vavatzanidis">
+
+    <!-- Open Graph for social sharing -->
+    <meta property="og:title" content="Alexandros Vavatzanidis | Composer & Classical Guitarist">
+    <meta property="og:description" content="South African/Greek composer and classical guitarist. Explore compositions, performances, and lessons.">
+    <meta property="og:image" content="https://zandrosvava.com/images/guitar_vertical.jpg">
+    <meta property="og:url" content="https://zandrosvava.com">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Alexandros Vavatzanidis | Composer & Classical Guitarist">
+    <meta name="twitter:description" content="Explore original compositions and classical guitar performances">
+
+    <title>Alexandros Music</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* -------------------------------
+           Global Styles
+        ------------------------------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --chocolate: #5a4035;
+            --chocolate-light: #6d5246;
+            --chocolate-dark: #3d2b23;
+            --mint: #a8dbc3;
+            --mint-light: #c5ead9;
+            --mint-dark: #8bc9ab;
+            --cream: #f0f5f2;
+            --white: #ffffff;
+            --text-dark: #3c2f2f;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --shadow-strong: rgba(0, 0, 0, 0.2);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: var(--cream);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* -------------------------------
+           Header / Navbar
+        ------------------------------- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: linear-gradient(135deg, rgba(60, 47, 47, 0.95), rgba(90, 64, 53, 0.95));
+            backdrop-filter: blur(10px);
+            z-index: 100;
+            padding: 1.2rem 5%;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 0.8rem 5%;
+            background: linear-gradient(135deg, rgba(60, 47, 47, 1), rgba(90, 64, 53, 1));
+        }
+
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .site-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--mint-light);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        .site-title:hover {
+            color: var(--mint);
+            transform: translateY(-2px);
+        }
+
+        nav {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--mint-light);
+            position: relative;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--mint);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--mint);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* -------------------------------
+           Hero Section
+        ------------------------------- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            margin-top: 70px;
+            position: relative;
+        }
+
+        .panel {
+            flex: 1;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            background-size: cover;
+            background-position: center;
+            transition: flex 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: flex;
+            padding-bottom: 10%;
+        }
+
+        .panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(90, 64, 53, 0.4), rgba(60, 47, 47, 0.6));
+            transition: background 0.4s ease;
+            will-change: background;
+        }
+
+        .panel:hover::before {
+            background: linear-gradient(135deg, rgba(90, 64, 53, 0.2), rgba(60, 47, 47, 0.3));
+        }
+
+        .panel:hover {
+            flex: 1.15;
+        }
+
+        .panel:not(:hover) {
+            flex: 0.85;
+        }
+
+        .panel-title {
+            position: relative;
+            z-index: 2;
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--white);
+            background: linear-gradient(135deg, rgba(90, 64, 53, 0.8), rgba(60, 47, 47, 0.9));
+            padding: 2rem 3rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+            transition: all 0.4s ease;
+            border: 2px solid rgba(168, 219, 195, 0.3);
+        }
+
+        .panel:hover .panel-title {
+            transform: translateY(-10px) scale(1.05);
+            background: linear-gradient(135deg, rgba(168, 219, 195, 0.9), rgba(140, 201, 171, 0.9));
+            color: var(--chocolate-dark);
+            border-color: var(--white);
+            box-shadow: 0 15px 50px rgba(168, 219, 195, 0.4);
+        }
+
+        /* -------------------------------
+           Section Base Styles
+        ------------------------------- */
+        section {
+            padding: 6rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--chocolate);
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--mint), var(--mint-dark));
+            border-radius: 2px;
+        }
+
+        /* -------------------------------
+           Bio Section
+        ------------------------------- */
+        #bio {
+            background: linear-gradient(135deg, var(--chocolate), var(--chocolate-light));
+            color: var(--white);
+            border-radius: 0;
+            box-shadow: 0 20px 60px var(--shadow-strong);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #bio::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(168, 219, 195, 0.1), transparent);
+            border-radius: 50%;
+        }
+
+        #bio .bio-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        #bio h2 {
+            color: var(--mint-light);
+        }
+
+        #bio h2::after {
+            background: linear-gradient(90deg, var(--mint-light), var(--white));
+        }
+
+        #bio p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            text-align: justify;
+            color: var(--mint-light);
+            font-weight: 300;
+        }
+
+        /* -------------------------------
+           Composition Section
+        ------------------------------- */
+        #composition {
+            background: var(--cream);
+            padding: 6rem 5%;
+        }
+
+        #composition > p {
+            text-align: center;
+            font-size: 1.15rem;
+            color: var(--chocolate-light);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .composition-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .collapsible {
+            background: linear-gradient(135deg, var(--chocolate), var(--chocolate-light));
+            color: var(--mint-light);
+            cursor: pointer;
+            padding: 1.5rem 2rem;
+            width: 100%;
+            border: none;
+            outline: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px var(--shadow);
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .collapsible:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px var(--shadow-strong);
+            background: linear-gradient(135deg, var(--chocolate-light), var(--chocolate));
+        }
+
+        .collapsible::after {
+            content: '▼';
+            font-size: 1rem;
+            transition: transform 0.3s ease;
+        }
+
+        .collapsible.active::after {
+            transform: rotate(180deg);
+        }
+
+        .content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            background: var(--white);
+            border-radius: 15px;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 20px var(--shadow);
+        }
+
+        .content ul {
+            list-style: none;
+            padding: 2rem;
+        }
+
+        .content li {
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-left: 3px solid var(--mint);
+            background: linear-gradient(90deg, var(--mint-light), transparent);
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .content li:hover {
+            transform: translateX(10px);
+            border-left-color: var(--chocolate);
+            background: linear-gradient(90deg, var(--mint), transparent);
+        }
+
+        .content a {
+            color: var(--chocolate);
+            font-weight: 500;
+            font-size: 1.05rem;
+        }
+
+        .composition-services {
+            background: linear-gradient(135deg, var(--mint-light), var(--mint));
+            padding: 3rem;
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            box-shadow: 0 8px 30px var(--shadow);
+        }
+
+        .composition-services h3 {
+            color: var(--chocolate-dark);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .composition-services ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .composition-services li {
+            color: var(--chocolate);
+            margin: 1rem 0;
+            padding-left: 2rem;
+            position: relative;
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        .composition-services li::before {
+            content: '♪';
+            position: absolute;
+            left: 0;
+            color: var(--chocolate-dark);
+            font-size: 1.3rem;
+        }
+
+        .composition-media {
+            text-align: center;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px var(--shadow);
+        }
+
+        .composition-media h3 {
+            color: var(--chocolate);
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+
+        .composition-media iframe {
+            border-radius: 15px;
+            box-shadow: 0 6px 20px var(--shadow-strong);
+            transition: transform 0.3s ease;
+            max-width: 100%;
+        }
+
+        .composition-media iframe:hover {
+            transform: scale(1.02);
+        }
+
+        /* -------------------------------
+           Guitar Section
+        ------------------------------- */
+        #guitar {
+            background: linear-gradient(135deg, var(--chocolate-dark), var(--chocolate));
+            padding: 6rem 50%;
+            display: flex;
+            justify-content: center;
+            align-items: stretch;
+            gap: 3rem;
+            color: var(--white);
+            box-shadow: 0 20px 60px var(--shadow-strong);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #guitar::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(168, 219, 195, 0.08), transparent);
+            border-radius: 50%;
+        }
+
+        .guitar-text {
+            flex: 0 0 650px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .guitar-text h2 {
+            color: var(--mint-light);
+            margin-bottom: 2rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        .guitar-text h2::after {
+            background: linear-gradient(90deg, var(--mint-light), var(--white));
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .guitar-text p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: var(--mint-light);
+            font-weight: 300;
+            text-align: center;
+        }
+
+        .guitar-video,
+        .guitar-image {
+            flex: 0 0 380px;
+            min-height: 600px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s ease;
+            position: relative;
+            z-index: 1;
+        }
+
+        .guitar-video:hover,
+        .guitar-image:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 50px rgba(168, 219, 195, 0.3);
+        }
+
+        .guitar-video {
+            position: relative;
+            width: 100%;
+            border: 3px solid rgba(168, 219, 195, 0.3);
+            border-radius: 20px;
+            overflow: hidden;
+            background: linear-gradient(135deg, rgba(168, 219, 195, 0.05), rgba(168, 219, 195, 0.15));
+        }
+
+
+        /* Force Instagram video to fill its container properly */
+        .guitar-video iframe,
+        .guitar-video blockquote {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            margin: 0;
+            background: transparent !important;
+        }
+
+        .guitar-image {
+            background-size: cover;
+            background-position: center;
+            border: 3px solid rgba(168, 219, 195, 0.3);
+        }
+
+        /* Responsive height handling for vertical layouts */
+        @media (max-width: 900px) {
+            .guitar-video {
+                aspect-ratio: 9 / 16; /* portrait ratio for phones or narrow layouts */
+                min-height: 500px;
+            }
+        }
+
+        /* Default (desktop) horizontal ratio */
+        @media (min-width: 901px) {
+            .guitar-video {
+                aspect-ratio: 4 / 5; /* similar to Instagram post ratio */
+                min-height: 600px;
+            }
+        }
+
+        /* -------------------------------
+           Contact Section
+        ------------------------------- */
+        #contact {
+            background: var(--cream);
+        }
+
+        #contact > p {
+            text-align: center;
+            font-size: 1.15rem;
+            color: var(--chocolate-light);
+            margin-bottom: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px var(--shadow);
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--chocolate);
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            border: 2px solid var(--mint-light);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            font-family: 'Raleway', sans-serif;
+            background: var(--cream);
+            transition: all 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: var(--mint);
+            outline: none;
+            background: var(--white);
+            box-shadow: 0 0 0 3px rgba(168, 219, 195, 0.2);
+        }
+
+        .contact-form button {
+            background: linear-gradient(135deg, var(--chocolate), var(--chocolate-light));
+            color: var(--mint-light);
+            border: none;
+            padding: 1rem 3rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px var(--shadow);
+            width: 100%;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .contact-form button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 25px var(--shadow-strong);
+            background: linear-gradient(135deg, var(--chocolate-light), var(--chocolate-dark));
+        }
+
+        /* -------------------------------
+           Testimonials
+        ------------------------------- */
+        /* Testimonials - enhanced animation */
+        /* Testimonials - Infinite Auto-Scroll Carousel */
+        #testimonials {
+            background: linear-gradient(135deg, var(--mint-light), var(--mint));
+            padding: 6rem 5%;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #testimonials h2 {
+            color: var(--chocolate-dark);
+        }
+
+        #testimonials h2::after {
+            background: linear-gradient(90deg, var(--chocolate), var(--chocolate-dark));
+        }
+
+        .testimonial-slider {
+            display: flex;
+            gap: 2rem;
+            width: max-content;
+            animation: scrollTestimonials 30s linear infinite;
+            will-change: transform;
+        }
+
+        .testimonial-slider:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scrollTestimonials {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        .testimonial-card {
+            display: block !important;
+            flex: 0 0 320px;
+            background: var(--white);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 30px var(--shadow);
+            border-top: 4px solid var(--chocolate);
+            transition: all 0.4s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px var(--shadow-strong);
+            border-top-color: var(--mint-dark);
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            color: var(--chocolate);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 1.2rem;
+            text-align: center;
+        }
+
+        .testimonial-card h4 {
+            text-align: right;
+            font-weight: 600;
+            color: var(--chocolate-light);
+            font-size: 1rem;
+        }
+
+        @media (max-width: 700px) {
+            .testimonial-card {
+                flex: 0 0 260px;
+                padding: 2rem;
+            }
+            .testimonial-slider {
+                gap: 1rem;
+            }
+        }
+
+        /* -------------------------------
+           Footer
+        ------------------------------- */
+        footer {
+            text-align: center;
+            padding: 3rem 5% 2rem;
+            background: linear-gradient(135deg, var(--chocolate-dark), var(--chocolate));
+            border-top: 3px solid var(--mint);
+        }
+
+        .social-media {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-media a {
+            width: 60px;
+            height: 60px;
+            background: rgba(168, 219, 195, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .social-media a:hover {
+            background: var(--mint);
+            transform: translateY(-5px) rotate(5deg);
+            border-color: var(--white);
+            box-shadow: 0 10px 30px rgba(168, 219, 195, 0.4);
+        }
+
+        .social-media img {
+            width: 35px;
+            height: 35px;
+            filter: brightness(0) invert(1);
+            transition: all 0.3s ease;
+        }
+
+        .social-media a:hover img {
+            filter: brightness(0) invert(0);
+            transform: scale(1.1);
+        }
+
+        .footer-text {
+            color: var(--mint-light);
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            font-weight: 300;
+        }
+
+        /* -------------------------------
+           Responsive Design
+        ------------------------------- */
+        @media(max-width: 1200px) {
+            .hero .panel-title {
+                font-size: 2.5rem;
+                padding: 1.5rem 2rem;
+            }
+        }
+
+        @media(max-width: 900px) {
+            nav {
+                gap: 1.5rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            .site-title {
+                font-size: 1.4rem;
+            }
+
+            section h2 {
+                font-size: 2.2rem;
+            }
+
+            #guitar {
+                flex-direction: column;
+                padding: 4rem 5%;
+            }
+
+            .guitar-text,
+            .guitar-video,
+            .guitar-image {
+                flex: 1 1 100%;
+                max-width: 100%;
+                margin-bottom: 2rem;
+            }
+
+            .guitar-video,
+            .guitar-image {
+                height: 400px;
+            }
+
+            .hero {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .panel {
+                min-height: 50vh;
+            }
+
+            .testimonials {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width: 600px) {
+            header {
+                padding: 1rem 3%;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav {
+                gap: 1rem;
+            }
+
+            section {
+                padding: 4rem 5%;
+            }
+
+            .hero .panel-title {
+                font-size: 2rem;
+                padding: 1rem 1.5rem;
+            }
+        }
+
+        /* -------------------------------
+           Smooth Animations
+        ------------------------------- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header id="header">
+    <div class="header-content">
+        <div class="site-title" onclick="window.scrollTo({top: 0, behavior: 'smooth'});"
+        >Alexandros Vavatzanidis | Zandros Vava | Music</div>
+        <nav>
+            <a href="#bio">Bio</a>
+            <a href="#composition">Composition</a>
+            <a href="#guitar">Classical Guitar</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<div class="hero">
+    <div class="panel" style="background-image: url('images/grad_vertical.jpg');" onclick="document.getElementById('composition').scrollIntoView({behavior: 'smooth'});">
+        <div class="panel-title">Composer</div>
+    </div>
+    <div class="panel" style="background-image: url('images/guitar_vertical.jpg');" onclick="document.getElementById('guitar').scrollIntoView({behavior: 'smooth'});">
+        <div class="panel-title">Guitarist</div>
+    </div>
+</div>
+
+<!-- Bio Section -->
+<section id="bio">
+    <div class="bio-content">
+        <h2>Bio</h2>
+        <p>Alexandros Vavatzanidis (b. 1998) is a South African / Greek composer, 
+            classical guitarist and teacher. His music, often described as vivid or cinematic, 
+            has formed under the tutelage of Hendrik Hofmeyr and Martin Watt at the University of Cape Town, 
+            where he received his Bachelor of Music (Dec 2020) and his Master of Music (Aug 2025) focusing on 
+            composition and analyses related to Einojuhani Rautavaara's music. 
+            Alexandros' academic and creative interests have afforded him opportunities to 
+            premiere both South African and international compositions on the classical guitar, 
+            study abroad at UCLA for a reciprocity programme, and have his compositions performed 
+            and recorded from various ensembles. 
+            These works range from solos, string quartets and symphonic orchestral works 
+            and have won many national prizes. Alexandros seeks to merge both a rigour of logos along with a deeply raw, 
+            emotional sense to his music – it foremost must be potent music.</p>
+    </div>
+</section>
+
+<!-- Composition Section -->
+<section id="composition">
+    <h2>Composition</h2>
+    <p>Explore selected works, commission options, and an overview of my sound world.</p>
+
+    <div class="composition-container">
+        <button class="collapsible">My Compositions</button>
+        <div class="content">
+            <ul>
+                <li><a href="https://youtu.be/ysA-qZB89bY?si=1N_o3u7zaYC2gCIb" target="_blank">Call From The Outer Dark - Tone Poem for Orchestra (2025)</a></li>
+                <li><a href="https://youtu.be/HGj-9tadyfk?si=TrLr-kWx06rStcz_" target="_blank">String Quartet No.1 – Distortions (2024)</a></li>
+                <li><a href="https://youtu.be/kNzh3xS4CJQ?si=WsZHXdQgADZhnuJU" target="_blank">Symphony No. 1 - "The Awakening" (2024)</a></li>
+                <li><a href="https://youtu.be/oEP4mFq1Huc?si=q5J36km47cMhv1CI" target="_blank">Double Sonata - for Flute & Piano (2020)</a></li>
+                <li><a href="https://youtu.be/i6g19C8AzHw?si=dmrufKHNQNzyTOk7" target="_blank">Emakhaya - Artsong for Soprano (2019)</a></li>
+            </ul>
+        </div>
+
+        <div class="composition-services">
+            <h3>Compositional Services</h3>
+            <ul>
+                <li>Original compositions for solo, chamber, and orchestral settings</li>
+                <li>Arrangements and reductions for varying ensembles</li>
+                <li>Orchestration and engraving for concert, film, and educational use</li>
+                <li>Commission collaborations tailored to performer strengths and concepts</li>
+            </ul>
+        </div>
+
+        <div class="composition-media">
+            <h3>Listen</h3>
+            <iframe
+                width="100%"
+                height="400"
+                src="https://www.youtube.com/embed/videoseries?list=PL4EZnkPOLqxnPBG4xzkPZH65cLYFpV6ni"
+                title="Compositions Playlist"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</section>
+
+<!-- Guitar Section -->
+<section id="guitar">
+    <div class="guitar-video">
+        <blockquote 
+            class="instagram-media" 
+            data-instgrm-permalink="https://www.instagram.com/p/CVf3sQqqk2Q/" 
+            data-instgrm-version="14">
+        </blockquote>
+        <script async src="//www.instagram.com/embed.js"></script>
+    </div>
+
+    <div class="guitar-text">
+        <h2>Classical Guitar</h2>
+        <p>
+            Performances, repertoire, and bookings for guitar lessons — all centered on the classical guitar tradition and its contemporary expression.
+            <br><br>
+            The classical guitar is my first musical love and my primary instrument. 
+            Nothing compares to its intimacy and, conversely, the rhythmic exhilaration it can create. 
+            Whether it’s a wedding, contemporary concert, recording, or private function —  
+            I aim to bring that same sense of drama to every performance.
+        </p>
+    </div>
+
+
+    <div class="guitar-image" style="background-image: url('images/recording_horizontal.jpeg');"></div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <h2>Contact</h2>
+    <p>If you'd like to get in touch regarding performances, commissions, or lessons, please fill out the form below.</p>
+
+    <form action="https://formspree.io/f/xldarqoj" method="POST" class="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="_replyto" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials">
+  <h2>Testimonials</h2>
+  <div class="testimonial-slider" id="testimonialSlider"></div>
+</section>
+
+<script>
+const testimonials = [
+  { text: "What an awesome teacher! Incredible ear and knowledge of the instrument. So patient with an old pupil like me, trying to fumble his way around the guitar. Every lesson is so enjoyable and he always listens to what I am wanting to achieve and works that into our lessons.", name: "John vcd Groot"},
+  { text: "I am particularly impressed by his compositional abilities, [...] I highly recommend Alexandros.", name: "Martin Watt" },
+  { text: "[String Quartet] Burnin' Fuga: it was like a rock concert!", name: "Audience Member" },
+  { text: "[Symphony No. 1] The final minutes are just so intensely beautiful and and otherworldly.", name: "Youtube Comment" }
+];
+
+const slider = document.getElementById('testimonialSlider');
+
+// Duplicate testimonials for seamless infinite scroll
+const allTestimonials = [...testimonials, ...testimonials];
+
+allTestimonials.forEach(({ text, name }) => {
+  const card = document.createElement('div');
+  card.classList.add('testimonial-card');
+  card.innerHTML = `
+    <p>"${text}"</p>
+    <h4>- ${name}</h4>
+  `;
+  slider.appendChild(card);
+});
+</script>
+
+<!-- Footer -->
+<footer>
+    <div class="social-media">
+        <a href="https://www.instagram.com/zandrosvava/" target="_blank">
+            <img src="icons/ios/icons8-instagram-50.png" alt="Instagram Icon">
+        </a>
+        <a href="https://www.youtube.com/@alexandrosvavatzanidis" target="_blank">
+            <img src="icons/ios/icons8-youtube-50.png" alt="YouTube Icon">
+        </a>
+    </div>
+    <p class="footer-text">© 2025 Alexandros Vavatzanidis. All rights reserved.</p>
+</footer>
+
+<script>
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+        const header = document.getElementById('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+
+    // Collapsible functionality
+    const coll = document.querySelector(".collapsible");
+    const content = document.querySelector(".content");
+
+    coll.addEventListener("click", function() {
+        this.classList.toggle("active");
+        if (content.style.maxHeight) {
+            content.style.maxHeight = null;
+        } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+        }
+    });
+
+    // Smooth scroll offset for fixed header
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const offsetTop = target.offsetTop - 80;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('section').forEach(section => {
+        observer.observe(section);
+    });
+</script>
+
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const cards = document.querySelectorAll(".testimonial-card");
+    let current = 0;
+
+    // Hide all except the first
+    cards.forEach((card, i) => card.style.display = i === 0 ? "block" : "none");
+
+    // Function to show next card
+    function showNextTestimonial() {
+      cards[current].style.display = "none";
+      current = (current + 1) % cards.length;
+      cards[current].style.display = "block";
+    }
+
+    // Rotate every 6 seconds
+    setInterval(showNextTestimonial, 6000);
+  });
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Alexandros Vavatzanidis",
+  "alternateName": "Zandros Vava",
+  "url": "https://zandrosvava.com",
+  "jobTitle": "Composer and Classical Guitarist",
+  "alumniOf": "University of Cape Town",
+  "nationality": ["South African", "Greek"],
+  "sameAs": [
+    "https://www.instagram.com/zandrosvava/",
+    "https://www.youtube.com/@alexandrosvavatzanidis"
+  ]
+}
+</script>
+
+
+</body>
+
+
+
+</html>

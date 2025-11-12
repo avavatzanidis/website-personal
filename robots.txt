@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://zandrosvava.com/sitemap.xml

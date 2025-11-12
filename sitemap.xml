@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://zandrosvava.com/</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>
+```
+
+## File Structure:
+```
+your-project/
+├── index.html          
+├── robots.txt          
+├── sitemap.xml         
+├── images/
+│   ├── grad_vertical.jpg
+│   ├── guitar_vertical.jpg
+│   └── recording_horizontal.jpeg
+└── icons/
+    └── ios/
+        ├── icons8-instagram-50.png
+        └── icons8-youtube-50.png
